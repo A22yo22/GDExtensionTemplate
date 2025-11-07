@@ -1,8 +1,10 @@
 # SPDX-License-Identifier: Unlicense
+# CMakeLists.txt
 
 cmake_minimum_required( VERSION 3.22 )
 
 message( STATUS "Using CMake ${CMAKE_VERSION}" )
+
 
 # Require out-of-source builds
 file( TO_CMAKE_PATH "${PROJECT_BINARY_DIR}/CMakeLists.txt" LOC_PATH )
@@ -136,7 +138,12 @@ set_target_properties( godot-cpp
         CXX_VISIBILITY_PRESET hidden    # visibility needs to be the same as the main library
 )
 
+
+# --- eCAL ---
+find_package(eCAL CONFIG REQUIRED)
+
 target_link_libraries( ${PROJECT_NAME}
     PRIVATE
         godot-cpp
+        eCAL::core
 )

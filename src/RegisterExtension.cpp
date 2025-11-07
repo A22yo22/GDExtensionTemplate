@@ -9,6 +9,8 @@
 #include "Example.h"
 #include "GDExtensionTemplate.h"
 
+#include "EcalFramePublisher.hpp"
+
 /// @file
 /// Register our classes with Godot.
 
@@ -33,6 +35,9 @@ namespace
         godot::ClassDB::register_abstract_class<ExampleAbstract>();
 
         godot::ClassDB::register_class<GDExtensionTemplate>();
+
+        godot::ClassDB::register_class<godot::EcalFramePublisher>();
+        
     }
 
     /// @brief Called by Godot to let us do any cleanup.
